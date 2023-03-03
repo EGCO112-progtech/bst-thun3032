@@ -105,3 +105,20 @@ void postOrder( TreeNodePtr treePtr ){
       printf("%3d",treePtr->data) ;  //print the value 
    } // end if 
 }
+
+void printTree( TreeNodePtr treePtr , int round ){
+  int i; 
+  // if tree is not empty, then traverse
+   if ( treePtr != NULL ) {         
+      printTree( treePtr->rightPtr,round+1); //Recursion to the right
+ 
+      for(i=1;i<=round;i++){
+        printf("\t");
+      }
+      printf("%d",treePtr->data) ;  //print the value 
+      printf("\n");
+   
+      printTree( treePtr->leftPtr,round+1); //Recursion to the left
+   } // end if                          
+
+}
